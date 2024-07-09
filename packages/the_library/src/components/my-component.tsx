@@ -15,6 +15,7 @@ const MyComponent = () => {
 
   return (
     <div>
+        <div>Here is my component from the_library</div>
         <div>My kids</div>
         {imgDivs}
     </div>
