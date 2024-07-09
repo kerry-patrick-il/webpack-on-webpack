@@ -1,10 +1,13 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
+    path: path.resolve(__dirname, "build"), //to a directory off the root named build
     publicPath: "http://localhost:8283/",
+    clean: true, //clean the build directory before building
   },
 
   resolve: {
@@ -36,9 +39,13 @@ module.exports = (_, argv) => ({
           loader: "babel-loader",
         },
       },
+      //use webpack 5 asset modules to copy image files
       {
-        test: /\.(svg|png|jpe?g)$/,
-        type: "asset/resource"
+        test: /\.(png|svg|jpg)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "static/media/[name].[contenthash][ext]"
+        }
       }
     ],
   },
