@@ -1,0 +1,33 @@
+node_modules
+
+# ignore build folders
+build/
+dist/
+
+# test coverage
+coverage/
+
+# misc
+.DS_Store
+.env.local
+.env.test.local
+.env.production.local
+
+# rebuild themes
+**/public/themes/
+
+*.pem
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.idea
+.vs
+
+# native app
+android/
+ios/
+resources/android
+resources/ios
+build.log
