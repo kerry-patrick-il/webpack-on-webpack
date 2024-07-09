@@ -1,10 +1,12 @@
 {
   "name": "the_library",
+  "private": "false",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/assets/* dist/assets/ -rf",
     "watch": "tsc --watch"
   },
   "devDependencies": {
