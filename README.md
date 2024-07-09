@@ -17,7 +17,6 @@ When I change the library to be a bundled build, the image files are loaded into
 * npm
 * yarn@^1.22
 
-
 ## The Good Branch (build-using-tsc)
 To run the application:
 1. clone this repo
@@ -26,3 +25,12 @@ To run the application:
 4. `yarn start`
 
 You should see a browser window showing the_app with pictures of two beautiful dogs.
+
+## The Bad Branch (build-using-webpack)
+To run the application:
+1. clone this repo
+2. `yarn install`
+3. `yarn run build`
+4. `yarn start`
+
+You should see a browser window showing the_app with *four* unfound images. 
